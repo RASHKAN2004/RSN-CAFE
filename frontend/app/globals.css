@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --color-salt: #f7f6f3;
+  --color-paper: #f8fbf9;
+  --color-ink: #0d151d;
+  --color-tide: #1e5f62;
+  --color-mist: #dfe8e3;
+  --color-soft: #64758a;
+  --color-saffron: #f4c95d;
+  --color-saffron-light: #ffe59f;
+  --color-chili: #d9524a;
+  --color-palm: #2b7b58;
+}
+
+@theme inline {
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0d12;
+  color: #edf3f7;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(244, 201, 93, 0.9);
+  outline-offset: 2px;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-transparent px-5 py-2.5 font-semibold transition duration-200 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply bg-[#f4c95d] text-[#101821] hover:bg-[#ffd978];
+  }
+
+  .btn-dark {
+    @apply bg-[#101821] text-white hover:bg-[#1a2a35];
+  }
+
+  .btn-ghost {
+    @apply border border-white/15 bg-white/5 text-white hover:border-white/30 hover:bg-white/10;
+  }
+
+  .btn-danger {
+    @apply border-[#d9524a] bg-[#2a1d1f] text-[#ffb5ad] hover:bg-[#d9524a] hover:text-white;
+  }
+
+  .btn-sm {
+    @apply rounded-lg px-3 py-1.5 text-sm;
+  }
+
+  .input {
+    @apply w-full rounded-xl border-2 border-white/10 bg-[#111821] px-4 py-2.5 text-white placeholder:text-slate-400 focus:border-[#f4c95d] focus:outline-none;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-semibold text-slate-200;
+  }
+
+  .panel {
+    @apply rounded-2xl border border-white/10 bg-[#111821];
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #bill,
+  #bill * {
+    visibility: visible;
+  }
+  #bill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
