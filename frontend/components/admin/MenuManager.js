@@ -13,6 +13,7 @@ const BLANK = {
   category: "",
   price: "",
   emoji: "☕",
+  imageUrl: "",
   isVeg: true,
   isPopular: false,
   isAvailable: true,
@@ -170,6 +171,20 @@ export default function MenuManager() {
               value={form.emoji}
               onChange={set("emoji")}
               maxLength={8}
+            />
+          </div>
+
+          <div className="sm:col-span-2">
+            <label htmlFor="m-image" className="field-label">
+              Real image URL
+            </label>
+            <input
+              id="m-image"
+              className="input"
+              type="url"
+              value={form.imageUrl || ""}
+              onChange={set("imageUrl")}
+              placeholder="https://images.unsplash.com/..."
             />
           </div>
 

@@ -118,8 +118,33 @@ export default function PosPanel() {
               onClick={() => bump(item, 1)}
               className="panel flex items-center gap-3 p-3 text-left transition-transform hover:-translate-y-0.5"
             >
-              <span className="grid h-14 w-14 place-items-center rounded-[1rem] bg-[color:var(--surface-strong)] text-3xl">
-                {item.emoji}
+              <span className="relative grid h-14 w-14 shrink-0 overflow-hidden rounded-[1rem] bg-[color:var(--surface-strong)] text-3xl">
+                {item.imageUrl ? (
+                  <>
+                    <img
+                      src={item.imageUrl}
+                      alt={item.name}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                        e.currentTarget.parentElement
+                          ?.querySelector("[data-fallback]")
+                          ?.classList.remove("hidden");
+                      }}
+                    />
+                    <span
+                      data-fallback
+                      className="hidden grid h-full w-full place-items-center"
+                    >
+                      {item.emoji}
+                    </span>
+                  </>
+                ) : (
+                  <span className="grid h-full w-full place-items-center">
+                    {item.emoji}
+                  </span>
+                )}
               </span>
 
               <span className="min-w-0 flex-1">

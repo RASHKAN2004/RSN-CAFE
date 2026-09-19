@@ -31,7 +31,7 @@ export default function MenuCard({ item }) {
     >
       <div className="flex gap-4">
         <div
-          className="grid h-24 w-24 shrink-0 place-items-center rounded-[1.35rem] border border-border text-4xl shadow-inner"
+          className="relative h-24 w-24 shrink-0 overflow-hidden rounded-[1.35rem] border border-border shadow-inner"
           style={{
             background: item.isVeg
               ? "linear-gradient(135deg, rgba(116,209,198,0.18), rgba(255,250,245,0.7))"
@@ -39,7 +39,32 @@ export default function MenuCard({ item }) {
           }}
           aria-hidden="true"
         >
-          {item.emoji}
+          {item.imageUrl ? (
+            <>
+              <img
+                src={item.imageUrl}
+                alt={item.name}
+                className="h-full w-full object-cover"
+                loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                  e.currentTarget.parentElement
+                    ?.querySelector("[data-fallback]")
+                    ?.classList.remove("hidden");
+                }}
+              />
+              <div
+                data-fallback
+                className="hidden h-full w-full place-items-center text-4xl"
+              >
+                {item.emoji}
+              </div>
+            </>
+          ) : (
+            <div className="grid h-full w-full place-items-center text-4xl">
+              {item.emoji}
+            </div>
+          )}
         </div>
 
         <div className="min-w-0 flex-1">

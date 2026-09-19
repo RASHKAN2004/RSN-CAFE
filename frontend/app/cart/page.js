@@ -112,8 +112,33 @@ export default function CartPage() {
                 key={i.id}
                 className="flex items-center gap-3 rounded-[1.4rem] border border-border bg-[color:var(--surface)] p-3 sm:p-4"
               >
-                <div className="grid h-16 w-16 place-items-center rounded-[1.1rem] bg-[color:var(--surface-strong)] text-3xl">
-                  {i.emoji}
+                <div className="relative h-16 w-16 overflow-hidden rounded-[1.1rem] bg-[color:var(--surface-strong)]">
+                  {i.imageUrl ? (
+                    <>
+                      <img
+                        src={i.imageUrl}
+                        alt={i.name}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.style.display = "none";
+                          e.currentTarget.parentElement
+                            ?.querySelector("[data-fallback]")
+                            ?.classList.remove("hidden");
+                        }}
+                      />
+                      <div
+                        data-fallback
+                        className="hidden grid h-full w-full place-items-center text-3xl"
+                      >
+                        {i.emoji}
+                      </div>
+                    </>
+                  ) : (
+                    <div className="grid h-full w-full place-items-center text-3xl">
+                      {i.emoji}
+                    </div>
+                  )}
                 </div>
 
                 <div className="min-w-0 flex-1">
@@ -144,6 +169,7 @@ export default function CartPage() {
                         name: i.name,
                         price: i.price,
                         emoji: i.emoji,
+                        imageUrl: i.imageUrl || "",
                       })
                     }
                     aria-label={`Add one ${i.name}`}
