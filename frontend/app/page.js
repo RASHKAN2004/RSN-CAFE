@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   BellRing,
   Clock3,
+  Coffee,
   MapPin,
   Navigation,
   Phone,
@@ -53,51 +54,61 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            <div className="floaty relative overflow-hidden rounded-[2rem] border border-border bg-[linear-gradient(135deg,rgba(26,109,106,0.16),rgba(255,250,245,0.6),rgba(215,161,95,0.16))] p-4 shadow-[var(--shadow)]">
-              <div className="absolute -left-12 top-12 h-32 w-32 rounded-full bg-gold/30 blur-3xl" />
-              <div className="absolute -right-10 bottom-0 h-44 w-44 rounded-full bg-accent/20 blur-3xl" />
+            <div className="floaty relative overflow-hidden rounded-[2rem] border border-[#f3efe9]/60 bg-[#0d1d1b] p-4 shadow-[0_30px_80px_rgba(2,10,9,0.42)]">
+              <div className="absolute -left-10 top-10 h-32 w-32 rounded-full bg-[#c8a267]/25 blur-3xl" />
+              <div className="absolute -right-8 bottom-0 h-40 w-40 rounded-full bg-[#4cc1b6]/20 blur-3xl" />
 
-              <div className="relative overflow-hidden rounded-[1.5rem] border border-border bg-[color:var(--surface)] p-4 sm:p-6">
-                <div className="mb-4 flex items-center justify-between">
+              <div className="relative overflow-hidden rounded-[1.75rem] border border-[#f3efe9]/40 bg-[linear-gradient(180deg,#1b3635_0%,#173532_18%,#2a4f4e_100%)] p-4 sm:p-6">
+                <div className="mb-5 flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.22em] text-ink-soft">
+                    <p className="text-[0.7rem] uppercase tracking-[0.26em] text-[#d8d3cc]">
                       Today’s pick
                     </p>
-                    <h2 className="mt-2 text-3xl text-ink">Lagoon Brew</h2>
+                    <h2 className="mt-2 text-4xl text-[#f3efe9] sm:text-[3rem]">
+                      Lagoon Brew
+                    </h2>
                   </div>
-                  <div className="grid h-12 w-12 place-items-center rounded-full bg-accent-soft text-accent">
-                    <span className="text-2xl">☕</span>
+                  <div className="grid h-14 w-14 place-items-center rounded-full border border-[#e7dfd5]/40 bg-[#dfece8] text-[#1a6d6a] shadow-inner shadow-white/20">
+                    <Coffee size={26} strokeWidth={1.8} />
                   </div>
                 </div>
 
-                <div className="relative">
-                  <div className="relative h-64 overflow-hidden rounded-[1.4rem] bg-[radial-gradient(circle_at_top,_rgba(215,161,95,0.3),_rgba(255,250,245,0.2)_30%,_rgba(26,109,106,0.18)_100%)]">
-                    <div className="absolute inset-x-8 bottom-0 h-28 rounded-t-[3rem] bg-[linear-gradient(180deg,#1a6d6a,#0f2e2d)]" />
-                    <div className="absolute inset-x-14 bottom-20 h-28 rounded-[50%] bg-[radial-gradient(circle_at_50%_20%,#f4d59b,#d7a15f_60%,#b87d36)]" />
-                    <div className="absolute left-6 top-8 h-14 w-14 rounded-full border border-border bg-white/25 backdrop-blur-sm" />
-                    <div className="absolute right-10 top-12 h-16 w-16 rounded-full border border-border bg-white/20" />
-                    <div className="absolute bottom-14 left-10 h-10 w-10 rounded-full bg-accent/20" />
-                    <div className="absolute bottom-10 right-16 h-14 w-14 rounded-full bg-gold/20" />
+                <div className="relative overflow-hidden rounded-[1.5rem] bg-[radial-gradient(circle_at_top,_rgba(221,190,138,0.32),_rgba(255,255,255,0.08)_33%,_rgba(15,44,44,0.24)_100%)] px-2 pb-2 pt-4">
+                  <div className="relative h-56 overflow-hidden rounded-[1.35rem] bg-[linear-gradient(180deg,rgba(31,82,82,0.36),rgba(15,43,42,0.08))]">
+                    <div className="absolute left-5 top-4 h-12 w-12 rounded-full bg-[#d9d4cf]/20 backdrop-blur-sm" />
+                    <div className="absolute right-10 top-8 h-14 w-14 rounded-full bg-[#d9d4cf]/20 backdrop-blur-sm" />
+                    <div className="absolute left-14 bottom-10 h-9 w-9 rounded-full bg-[#78c9c0]/35" />
+                    <div className="absolute right-14 bottom-8 h-12 w-12 rounded-full bg-[#55b9aa]/30" />
+
+                    <div className="absolute inset-x-3 bottom-0 h-20 rounded-t-[3rem] bg-[linear-gradient(180deg,#1d6d6a_0%,#163a39_52%,#102d2d_100%)]" />
+                    <div className="absolute inset-x-14 bottom-10 h-28 rounded-[48%] bg-[radial-gradient(circle_at_50%_22%,#f4d9a2_0%,#e8c57f_28%,#d7a15f_62%,#b48345_100%)] shadow-[0_0_28px_rgba(223,179,109,0.4)]" />
+                    <div className="absolute inset-x-12 bottom-0 h-14 rounded-t-[2.5rem] bg-[linear-gradient(180deg,rgba(19,77,77,0.85),rgba(8,27,31,0.9))]" />
                   </div>
 
                   <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                    <div className="rounded-2xl border border-border bg-[color:var(--surface-strong)] p-3">
-                      <p className="text-[11px] uppercase tracking-[0.18em] text-ink-soft">
+                    <div className="rounded-2xl border border-[#f2efe9]/20 bg-[#c9d0cf]/10 p-3 backdrop-blur-sm">
+                      <p className="text-[10px] uppercase tracking-[0.22em] text-[#dfe0dd]">
                         Fresh
                       </p>
-                      <p className="mt-2 text-xl font-bold">Hoppers</p>
+                      <p className="mt-2 text-xl font-bold text-[#f4f0ec]">
+                        Hoppers
+                      </p>
                     </div>
-                    <div className="rounded-2xl border border-border bg-[color:var(--surface-strong)] p-3">
-                      <p className="text-[11px] uppercase tracking-[0.18em] text-ink-soft">
+                    <div className="rounded-2xl border border-[#f2efe9]/20 bg-[#c9d0cf]/10 p-3 backdrop-blur-sm">
+                      <p className="text-[10px] uppercase tracking-[0.22em] text-[#dfe0dd]">
                         Hot
                       </p>
-                      <p className="mt-2 text-xl font-bold">Kottu</p>
+                      <p className="mt-2 text-xl font-bold text-[#f4f0ec]">
+                        Kottu
+                      </p>
                     </div>
-                    <div className="rounded-2xl border border-border bg-[color:var(--surface-strong)] p-3">
-                      <p className="text-[11px] uppercase tracking-[0.18em] text-ink-soft">
+                    <div className="rounded-2xl border border-[#f2efe9]/20 bg-[#c9d0cf]/10 p-3 backdrop-blur-sm">
+                      <p className="text-[10px] uppercase tracking-[0.22em] text-[#dfe0dd]">
                         Cool
                       </p>
-                      <p className="mt-2 text-xl font-bold">King Coconuts</p>
+                      <p className="mt-2 text-xl font-bold text-[#f4f0ec]">
+                        King Coconuts
+                      </p>
                     </div>
                   </div>
                 </div>
