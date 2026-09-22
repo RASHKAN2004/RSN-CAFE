@@ -2,10 +2,10 @@ import { CAFE } from "@/lib/cafe";
 
 export default function Footer() {
   return (
-    <footer className="no-print mt-16 border-t border-border bg-[linear-gradient(180deg,#0e1514,#111b1a)] text-white">
+    <footer className="no-print mt-16 border-t border-border bg-[linear-gradient(180deg,#0d1817,#101b1a)] text-white">
       <div className="page-shell grid gap-8 py-10 sm:grid-cols-3">
         <div>
-          <p className="font-display text-3xl font-bold tracking-tight">
+          <p className="font-display text-4xl font-semibold tracking-[-0.05em] text-[#f7efe8]">
             RSN CAFE
           </p>
           <p className="mt-2 text-sm leading-6 text-white/70">

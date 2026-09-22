@@ -72,13 +72,13 @@ export default function Navbar() {
       <div className="page-shell flex items-center gap-3 py-3">
         <Link
           href="/"
-          className="flex shrink-0 items-center gap-2"
+          className="flex shrink-0 items-center gap-3"
           aria-label={`${CAFE.name} home`}
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-black text-white">
+          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[linear-gradient(135deg,#1b5b58,#0f3735)] text-sm font-black text-white shadow-[0_10px_22px_rgba(28,95,92,0.28)]">
             RS
           </span>
-          <span className="font-display text-2xl font-bold tracking-tight">
+          <span className="font-display text-[1.7rem] font-semibold tracking-[-0.05em] text-ink">
             RSN CAFE
           </span>
         </Link>
