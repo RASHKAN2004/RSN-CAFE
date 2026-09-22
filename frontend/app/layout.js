@@ -1,18 +1,20 @@
-import { Manrope, Playfair_Display } from "next/font/google";
+import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const playfair = Playfair_Display({
+const display = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-display",
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const manrope = Manrope({
+const sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -27,11 +29,11 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${playfair.variable} ${manrope.variable}`}
+      className={`${display.variable} ${sans.variable}`}
     >
-      <body className="bg-bg text-ink antialiased">
+      <body className="bg-bg text-ink antialiased selection:bg-[#d7a15f]/30">
         <Providers>
-          <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(215,161,95,0.18),transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(26,109,106,0.15),transparent_25%)]">
+          <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(215,161,95,0.2),transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(26,109,106,0.15),transparent_28%)]">
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
